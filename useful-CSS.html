@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основни CSS стилове</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/logo-little.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="images/logo-transparent.png" alt="logo" height="30"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Начало</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Полезно
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="useful-websites.html">Видове уебсайт</a></li>
+                            <li><a class="dropdown-item" href="useful-phases.html">Етапи на разработка</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="useful-HTML.html">Основни HTML тагове</a></li>
+                            <li><a class="dropdown-item" href="useful-CSS.html">Основни CSS стилове</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portal.html">Практика</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">За мен</a>
+                    </li>
+                </ul>
+                <div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="bi bi-circle-half me-2"></i>Избор на тема
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li onclick="lightTheme()"><a class="dropdown-item" href="#"><i
+                                            class="bi bi-brightness-high me-3"></i>Светла</a></li>
+                                <li onclick="darkTheme()"><a class="dropdown-item" href="#"><i
+                                            class="bi bi-moon me-3"></i>Тъмна</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="useful-css">
+        <h1>Основни CSS стилове</h1>
+        <p class="text-secondary">CSS (Cascading Style Sheets) е език за описание на визуалния стил и
+            оформление на уеб документи, използван основно в комбинация с HTML. CSS
+            позволява на уеб разработчиците и дизайнерите да определят как уеб
+            страниците се визуализират в браузъра, включително цветове, шрифтове,
+            разположение на елементите, преходи, анимации и много други аспекти на
+            дизайна. Чрез отделянето на съдържанието (HTML) от представянето (CSS),
+            уебсайтовете стават по-лесни за поддръжка и тяхното съдържание може да
+            бъде по-достъпно представено на различни устройства.</p>
+
+        <p class="text-secondary">CSS работи чрез определяне на правила за стил, които се състоят от селектори
+            и декларации. Селекторите определят към кои елементи от HTML документа се
+            прилагат правилата, докато декларациите определят как трябва да изглеждат
+            тези елементи. Декларациите се записват в блокове, състоящи се от свойство и
+            стойност, разделени с двоеточие и обхванати в къдрави скоби.</p>
+
+        <div class="alert alert-primary mt-4 mw-50 m-auto" role="alert">
+            <h4 class="alert-heading"><i class="bi bi-lightbulb"></i> Любопитно</h4>
+            <hr>
+            <p>CSS поддържа адаптивен дизайн, който позволява на страниците
+                да се адаптират и да изглеждат добре на всякакви устройства и размери на
+                екрана, използвайки медийни запитвания (media queries). Това е особено важно
+                в днешния уеб, където потребителите достъпват съдържание чрез множество
+                устройства с различни екрани.</p>
+
+            <p>SASS (Syntactically Awesome Style Sheets) е мощен препроцесор за CSS, който помага
+                на разработчиците да пишат по-подреден, гъвкав и лесен за поддръжка CSS код.
+                Препроцесорите на CSS са скриптови езици, които разширяват стандартния CSS с
+                нови функционалности като променливи, вложения, миксини и функции, които след
+                това автоматично се компилират обратно в обикновен CSS код, съвместим с всички
+                уеб браузъри.</p>
+        </div>
+        <div class="d-flex align-items-start mt-5 tabs">
+            <div class="nav flex-column nav-pills mb-4" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+            </div>
+            <div class="tab-content" id="v-pills-tabContent">
+
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="scripts/global.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/usefulCSS.js"></script>
+
+</body>
+
+</html>

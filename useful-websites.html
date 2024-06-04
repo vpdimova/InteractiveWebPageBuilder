@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видове уебсайт</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/logo-little.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="images/logo-transparent.png" alt="logo" height="30"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Начало</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Полезно
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="useful-websites.html">Видове уебсайт</a></li>
+                            <li><a class="dropdown-item" href="useful-phases.html">Етапи на разработка</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="useful-HTML.html">Основни HTML тагове</a></li>
+                            <li><a class="dropdown-item" href="useful-CSS.html">Основни CSS стилове</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portal.html">Практика</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">За мен</a>
+                    </li>
+                </ul>
+                <div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="bi bi-circle-half me-2"></i>Избор на тема
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li onclick="lightTheme()"><a class="dropdown-item" href="#"><i
+                                            class="bi bi-brightness-high me-3"></i>Светла</a></li>
+                                <li onclick="darkTheme()"><a class="dropdown-item" href="#"><i
+                                            class="bi bi-moon me-3"></i>Тъмна</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="useful-websites">
+        <h1 class="mt-3 text-primary">Видове уебсайт</h1>
+        <h2><b>Статичен</b> уебсайт</h2>
+        <p class="text-secondary">Статичният уебсайт е основен вид уебсайт, който се състои от фиксирани уеб
+            страници, кодирани в HTML. Всяка страница е отделен HTML файл и показва
+            еднаква информация на всички посетители. В противоположност на
+            динамичните уебсайтове, които използват сървърни скриптове за генериране на
+            съдържание в реално време, съдържанието на статичен уебсайт не се променя,
+            освен ако не бъде ръчно актуализирано от разработчика.</p>
+
+        <p class="text-secondary">Статичните уебсайтове са идеални за малки уебсайтове с ограничено
+            съдържание и без необходимост от чести актуализации. Те са по-бързи и по-
+            сигурни от динамичните уебсайтове, тъй като не изискват база данни или
+            сложна обработка на страната на сървъра. Това ги прави предпочитан избор за
+            лични портфолиа, статични блогове и корпоративни уебсайтове с фиксирано
+            съдържание.</p>
+
+        <p class="text-secondary">Изграждането на статичен уебсайт обикновено е по-лесно и по-евтино в
+            сравнение с динамичен уебсайт, тъй като изисква по-малко разработка и
+            ресурси за хостинг. Съвременни инструменти като генератори на статични
+            сайтове позволяват автоматизиране на някои процеси като генериране на
+            страници от шаблони, което улеснява поддръжката и актуализирането на
+            статични сайтове.</p>
+
+        <p class="text-secondary">Въпреки че статичните уебсайтове могат да бъдат ограничени във
+            функционалност в сравнение с динамичните сайтове, те все още предлагат
+            значителни предимства по отношение на скоростта, сигурността и
+            надеждността. С развитието на технологиите за уеб разработка, статичните
+            уебсайтове продължават да бъдат важен компонент на уеб екосистемата,
+            особено за проекти с по-малък обем или специфични изисквания за сигурност.</p>
+
+        <h2><b>Динамичен</b> уебсайт</h2>
+        <p class="text-secondary">Динамичният уебсайт представлява по-сложна структура в сравнение със
+            статичния уебсайт, като позволява създаването на персонализирано
+            съдържание за различни потребители в реално време. В основата на
+            динамичния уебсайт стои взаимодействието между клиентския браузър и
+            сървъра, където се обработва информацията. Такива сайтове обикновено
+            изискват използването на серверни езици като PHP, JavaScript (Node.js), Ruby,
+            Python или други, за да обработват заявките на потребителите и да генерират
+            съдържание динамично.</p>
+
+        <p class="text-secondary">За разлика от статичните уебсайтове, където всяка страница се съхранява като
+            отделен HTML файл, динамичните уебсайтове използват бази данни за
+            съхранение на съдържание, настройки и потребителска информация. Това
+            позволява на уебсайтовете да предлагат богати, интерактивни елементи като
+            потребителски акаунти, форми за обратна връзка, форуми и електронни
+            магазини.</p>
+
+        <p class="text-secondary">Динамичните уебсайтове предоставят значителни предимства в управлението
+            на съдържанието и персонализацията. Системите за управление на
+            съдържание (CMS), като WordPress, Joomla и Drupal, улесняват създаването,
+            редактирането и актуализирането на съдържанието без необходимостта от
+            директна работа с код. Това прави динамичните уебсайтове идеални за
+            блогове, новинарски портали и корпоративни уебсайтове, които трябва редовно
+            да обновяват и публикуват ново съдържание.</p>
+
+        <p class="text-secondary">Въпреки че разработката и поддръжката на динамични уебсайтове могат да
+            бъдат по-скъпи и сложни от статичните уебсайтове поради необходимостта от
+            сървърна логика, бази данни и по-сложни системи за управление, те предлагат
+            по-голяма гъвкавост и мощност за създаване на богати, интерактивни уеб
+            изживявания. Освен това, с нарастването на облачните технологии и
+            платформи като Google Cloud, AWS и Microsoft Azure, динамичните уебсайтове
+            могат лесно да се мащабират, за да отговарят на растящото търсене, като по
+            този начин подобряват производителността и достъпността за крайните
+            потребители.</p>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="scripts/global.js"></script>
+
+</body>
+
+</html>

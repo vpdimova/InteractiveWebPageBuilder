@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Page Builder with HTML and CSS">
+    <meta name="keywords" content="Interactive">
+    <title>Интерактивен Инструмент</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/tool.css">
+    <link rel="shortcut icon" href="images/logo-little.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style></style>
+</head>
+
+<body>
+    <main class="main">
+        <section class="not-result">
+            <section class="build-section">
+                <div class="d-flex flex-column">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-html-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-html" type="button" role="tab" aria-controls="nav-html"
+                                aria-selected="true"><i class="bi bi-code-slash"></i> Тагове</button>
+                            <button class="nav-link" id="nav-css-tab" data-bs-toggle="tab" data-bs-target="#nav-css"
+                                type="button" role="tab" aria-controls="nav-css" aria-selected="false"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-braces-asterisk" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6M7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5z" />
+                                </svg> Стилове</button>
+                            <button class="nav-link" id="nav-attr-tab" data-bs-toggle="tab" data-bs-target="#nav-attr"
+                                type="button" role="tab" aria-controls="nav-attr" aria-selected="false"><i
+                                    class="bi bi-list-task"></i> Атрибути</button>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active html-menu container" id="nav-html" role="tabpanel"
+                            aria-labelledby="nav-html-tab" ondrop="deleteOnDrop(event)" data-type="delete" tabindex="0">
+                            <article class="btn-menu">
+                            </article>
+                        </div>
+                        <div class="tab-pane fade container css-menu" id="nav-css" role="tabpanel"
+                            aria-labelledby="nav-css-tab" tabindex="0" ondrop="deleteOnDrop(event)" data-type="delete">
+                        </div>
+                        <div class="tab-pane fade container attrs-menu" id="nav-attr" role="tabpanel"
+                            aria-labelledby="nav-attr-tab" tabindex="0" ondrop="deleteOnDrop(event)" data-type="delete">
+                        </div>
+                    </div>
+                </div>
+
+                <section class="builder-wrapper">
+                    <!-- MAIN TAG -->
+                    <section class="body-holder">
+                        <div class="draggable-s body">
+                            <span>&lt;body&gt; </span>
+                            <div class="container-in container" data-type="body">
+
+                            </div>
+                            <span> &lt;/body&gt;</span>
+                        </div>
+                    </section>
+                </section>
+
+                <!-- TEMPLATES -->
+                <div style="display: none;">
+                    <!-- HTML TEMPLATE TYPE 0-->
+                    <div class="draggable universal-html-template" data-type="" draggable="true"> <!-- !! -->
+                        <span class="text-wrapper">&lt;<span class="placeholder-name"></span></span> <!-- !! -->
+                        <div class="container container-attr" data-type="attr">
+                        </div>
+                        <span class="text-wrapper closing-bracket">&gt;</span>
+                        <span class="dots d-none">... </span>
+                        <div class="container-in container-children container" data-type=""> <!-- !! -->
+                        </div>
+                        <span class="text-wrapper"> &lt;/<span class="placeholder-name"></span>&gt;</span> <!-- !! -->
+                        <button onclick="toggleVisibility(this, event)" class="toggle-btn d-none">
+                            <img src="images/eye.svg" alt="eye" class="bi bi-eye-fill" />
+                        </button>
+                        <button onclick="toggleVisibility(this, event)" class="toggle-btn slash">
+                            <img src="images/eye-slash.svg" alt="eye" class="bi bi-eye-fill" />
+                        </button>
+                    </div>
+                    <!-- HTML TEMPLATE TYPE 1-->
+                    <div class="draggable universal-html-template" data-type="" draggable="true"> <!-- !! -->
+                        <span class="text-wrapper">&lt;<span class="placeholder-name"></span></span>
+                        <div class="container container-attr" data-type="attr">
+                        </div>
+                        <span class="dots d-none">... </span>
+                        <span class="text-wrapper closing-bracket">&gt;</span>
+                        <button onclick="toggleVisibility(this, event)" class="toggle-btn d-none">
+                            <img src="images/eye.svg" alt="eye" class="bi bi-eye-fill" />
+                        </button>
+                        <button onclick="toggleVisibility(this, event)" class="toggle-btn slash">
+                            <img src="images/eye-slash.svg" alt="eye" class="bi bi-eye-fill" />
+                        </button>
+                    </div>
+                    <!-- HTML TEMPLATE TYPE 2-->
+                    <div class="draggable text-draggable universal-html-template" data-type="text" draggable="true"
+                        width="336" height="69">
+                        <textarea type="text" class="text-input" data-type="text" autocomplete="off" autocorrect="off"
+                            autocapitalize="off" spellcheck="false"></textarea>
+                    </div>
+                    <!-- HTML TEMPLATE TYPE 3-->
+                    <div class="draggable universal-html-template" data-type="" draggable="true"> <!-- !! -->
+                        <span class="text-wrapper">&lt;<span class="placeholder-name"></span>&gt;</span>
+                    </div>
+                    <!-- HTML TEMPLATE BUTTON-->
+                    <button data-type="" class="add-el-btn html-button-template"><span
+                            class="placeholder-name"></span></button>
+                </div>
+                <!-- /TEMPLATES -->
+
+                <section class="css-builder">
+                    <!-- STYLE TAG -->
+                    <div class="draggable-s body head-tag">
+                        <span>&lt;head&gt; </span>
+                        <div class="draggables-holder container-in container" data-type="head">
+                            <div class="draggable-s body" data-type="bgcolor">
+                                <span class="text-wrapper">&lt;meta name="description" content="</span><input
+                                    type="text" class="text-input styles-input"><span class="text-wrapper">"&gt;</span>
+                            </div>
+                            <div class="draggable-s body" data-type="bgcolor">
+                                <span class="text-wrapper">&lt;meta name="keywords" content="</span><input type="text"
+                                    class="text-input styles-input"><span class="text-wrapper">"&gt;</span>
+                            </div>
+                            <div class="draggable-s body" data-type="bgcolor">
+                                <span class="text-wrapper">&lt;title&gt;</span><input type="text"
+                                    class="text-input styles-input"><span class="text-wrapper">&lt;/title&gt;</span>
+                            </div>
+                            <div class="draggable-s body">
+                                <span class="text-wrapper">&lt;style&gt; </span>
+                                <div class="draggables-holder container-in container stylesheet" data-type="stylesheet">
+                                </div>
+                                <span class="text-wrapper"> &lt;/style&gt;</span>
+                            </div>
+                        </div>
+                        <span> &lt;/head&gt;</span>
+                    </div>
+                    <!--  
+                    -->
+                    <!--
+                    <div class="draggable-s body">
+                        <span>&lt;style&gt; </span>
+                        <div class="draggables-holder container-in container head-tag" data-type="stylesheet">
+                        </div>
+                        <span> &lt;/style&gt;</span>
+                    </div>
+                    -->
+
+                </section>
+
+                <!-- CSS TEMPLATES -->
+                <section class="css-templates" style="display: none;">
+                    <!-- CSS TEMPLATE TYPE 0-->
+                    <!-- (selector): { (children) } -->
+
+                    <div class="draggable style-holder universal-css-template text" data-type="" draggable="true">
+                        <input type="text" class="selector-input"><span class="text-wrapper">{</span>
+                        <div class="container-in container style-container template-flag" data-type="">
+                        </div>
+                        <span class="text-wrapper">}</span>
+                    </div>
+
+                    <!-- CSS TEMPLATE TYPE 1-->
+                    <!-- [style]: (value) -->
+
+                    <div class="draggable style universal-css-template" data-type="bgcolor" draggable="true">
+                        <span class="text-wrapper"><span class="placeholder-name"></span>:</span><input type="text"
+                            class="text-input styles-input"><span class="text-wrapper">;</span>
+                    </div>
+
+                    <!-- CSS TEMPLATE TYPE 2 -->
+                    <!-- [style]-([direction/type]): (value) -->
+
+                    <div class="draggable style universal-css-template" data-type="" draggable="true">
+                        <span class="text-wrapper"><span class="placeholder-name"></span></span>
+                        <select type="text" class="text-input styles-input style-direction-select">
+                            <!-- ... -->
+                        </select>
+                        <span class="text-wrapper">: </span><input type="text" class="text-input styles-input"><span
+                            class="text-wrapper">;</span>
+                    </div>
+
+                    <!-- CSS TEMPLATE TYPE 3 -->
+                    <!-- [style]: ([options]) -->
+
+                    <div class="draggable style universal-css-template" data-type="" draggable="true">
+                        <span class="text-wrapper"><span class="placeholder-name"></span>:</span>
+                        <select class="text-input styles-input style-value-select">
+                            <!-- ... -->
+                        </select>
+                        <span class="text-wrapper">;</span>
+                    </div>
+
+                    <!-- CSS BUTTON TEMPLATE -->
+                    <button data-type="" class="css-button-template"><span class="placeholder-name"></span></button>
+
+                </section>
+
+                <!-- ATTR TEMPLATES -->
+                <section class="attr-templates" style="display: none;">
+                    <!-- ATTR TEMPLATE TYPE 0-->
+                    <div class="universal-attr-template draggable draggable-attr" data-template="0" data-type=""
+                        draggable="true">
+                        <span class="text-wrapper">
+                            <!-- <--this spacing here is important--><span class="placeholder-name"></span>="</span>
+                        <input type="text" class="text-input attr-input">
+                        <span class="text-wrapper">"</span>
+                    </div>
+
+                    <!-- ATTR TEMPLATE TYPE 1-->
+                    <div class="universal-attr-template draggable draggable-attr" data-template="1" data-type="">
+                        <!--<span class="text-wrapper"><span class="placeholder-name"></span>="<span class="placeholder-value"></span>"</span>-->
+                        <span class="text-wrapper">
+                            <!-- <--this spacing here is important--><span class="placeholder-name"></span>="</span>
+                        <input type="text" disabled class="text-input attr-input placeholder-value">
+                        <span class="text-wrapper">"</span>
+                    </div>
+
+
+                    <!-- ATTR TEMPLATE TYPE 2-->
+                    <div class="universal-attr-template draggable draggable-attr" data-template="2" data-type="" draggable="true">
+                        <span class="text-wrapper"> <!-- <--this spacing here is important--><span class="placeholder-name"></span></span>
+                    </div>
+
+                    <!-- ATTR TEMPLATE BUTTON-->
+                    <button data-type="" class="add-el-btn attr-button-template"><span
+                            class="placeholder-name"></span></button>
+
+                </section>
+
+
+            </section>
+
+
+            <button class="build-page-btn btn btn-primary mb-2">Създай странцата</button>
+            <div class="btn-group mb-2">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <i class="bi bi-circle-half me-2"></i>Избор на тема
+                </button>
+                <ul class="dropdown-menu">
+                    <li onclick="lightTheme()"><a class="dropdown-item" href="#"><i
+                                class="bi bi-brightness-high me-3"></i>Светла</a></li>
+                    <li onclick="darkTheme()"><a class="dropdown-item" href="#"><i class="bi bi-moon me-3"></i>Тъмна</a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link text-body-emphasis active" id="preview-tab" data-bs-toggle="tab" data-bs-target="#preview-tab-pane"
+                    type="button" role="tab" aria-controls="preview-tab-pane" aria-selected="true"><i class="bi bi-eye-fill me-2"></i> Изглед</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link text-body-emphasis" id="code-tab" data-bs-toggle="tab" data-bs-target="#code-tab-pane"
+                    type="button" role="tab" aria-controls="code-tab-pane" aria-selected="false"><i class="bi bi-code-slash me-2"></i> Код за копиране</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="preview-tab-pane" role="tabpanel" aria-labelledby="preview-tab"
+                tabindex="0"><iframe class="j-0sdw_dd32-w3d_-fff3-2f-_F_Ff_Dfas">
+
+                </iframe></div>
+            <div class="tab-pane fade" id="code-tab-pane" role="tabpanel" aria-labelledby="code-tab" tabindex="0">
+
+                <button class="btn btn-secondary mb-2 mt-2 copy-btn"><i class="bi bi-clipboard me-2"></i>Копирай кода</button>
+
+                <p class="output">
+
+                </p>
+               </div>
+        </div>
+
+        
+
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="scripts/global.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/attrBlocks.js"></script>
+    <script src="scripts/htmlBlocks.js"></script>
+    <script src="scripts/cssBlcoks.js"></script>
+
+</body>
+
+</html>
